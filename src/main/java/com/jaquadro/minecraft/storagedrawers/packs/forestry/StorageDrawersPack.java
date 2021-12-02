@@ -17,7 +17,7 @@ public class StorageDrawersPack
 {
     public static final String MOD_ID = "StorageDrawersForestry";
     public static final String MOD_NAME = "Storage Drawers: Forestry Pack";
-    public static final String MOD_VERSION = "@VERSION@";
+    public static final String MOD_VERSION = "GRADLETOKEN_VERSION";
     public static final String SOURCE_PATH = "com.jaquadro.minecraft.storagedrawers.packs.forestry.";
 
     public DataResolver[] resolvers = new DataResolver[] {
