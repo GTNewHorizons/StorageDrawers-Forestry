@@ -11,8 +11,7 @@ import com.jaquadro.minecraft.storagedrawers.packs.forestry.StorageDrawersPack;
 import cpw.mods.fml.common.Loader;
 import net.minecraft.block.Block;
 
-public class RefinedRelocation
-{
+public class RefinedRelocation {
     public static Block[] fullDrawers1;
     public static Block[] fullDrawers2;
     public static Block[] fullDrawers4;
@@ -20,13 +19,12 @@ public class RefinedRelocation
     public static Block[] halfDrawers4;
     public static Block[] trim;
 
-    public static void init () {
+    public static void init() {
         IStorageDrawersApi api = StorageDrawersApi.instance();
-        if (api == null)
-            return;
+        if (api == null) return;
 
-        if (!Loader.isModLoaded("RefinedRelocation") || !api.userConfig().integrationConfig().isRefinedRelocationEnabled())
-            return;
+        if (!Loader.isModLoaded("RefinedRelocation")
+                || !api.userConfig().integrationConfig().isRefinedRelocationEnabled()) return;
 
         IPackBlockFactory factory = api.packFactory();
         IPackDataResolver[] resolvers = StorageDrawersPack.instance.resolvers;
@@ -59,7 +57,7 @@ public class RefinedRelocation
         IUserConfig config = api.userConfig();
         IBlockConfig blockConfig = config.blockConfig();
 
-        char[] tail = new char[] { 'A', 'B' };
+        char[] tail = new char[] {'A', 'B'};
 
         if (blockConfig.isBlockEnabled(blockConfig.getBlockConfigName(BlockConfiguration.SortingFull1))) {
             for (int i = 0; i < resolvers.length; i++)
@@ -82,8 +80,7 @@ public class RefinedRelocation
                 factory.registerBlock(halfDrawers4[i], "halfDrawersSort4" + tail[i]);
         }
         if (blockConfig.isBlockEnabled(blockConfig.getBlockConfigName(BlockConfiguration.TrimSorting))) {
-            for (int i = 0; i < resolvers.length; i++)
-                factory.registerBlock(trim[i], "trimSort" + tail[i]);
+            for (int i = 0; i < resolvers.length; i++) factory.registerBlock(trim[i], "trimSort" + tail[i]);
         }
 
         if (!config.addonConfig().showAddonItemsNEI()) {
