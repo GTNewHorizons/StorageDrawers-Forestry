@@ -1,5 +1,7 @@
 package com.jaquadro.minecraft.storagedrawers.packs.forestry.core;
 
+import net.minecraft.block.Block;
+
 import com.jaquadro.minecraft.storagedrawers.api.IStorageDrawersApi;
 import com.jaquadro.minecraft.storagedrawers.api.StorageDrawersApi;
 import com.jaquadro.minecraft.storagedrawers.api.config.IBlockConfig;
@@ -9,9 +11,9 @@ import com.jaquadro.minecraft.storagedrawers.api.pack.IPackBlockFactory;
 import com.jaquadro.minecraft.storagedrawers.api.pack.IPackDataResolver;
 import com.jaquadro.minecraft.storagedrawers.packs.forestry.StorageDrawersPack;
 import cpw.mods.fml.common.registry.GameData;
-import net.minecraft.block.Block;
 
 public class ModBlocks {
+
     public static Block[] fullDrawers1;
     public static Block[] fullDrawers2;
     public static Block[] fullDrawers4;
@@ -47,7 +49,7 @@ public class ModBlocks {
         IUserConfig config = api.userConfig();
         IBlockConfig blockConfig = config.blockConfig();
 
-        char[] tail = new char[] {'A', 'B'};
+        char[] tail = new char[] { 'A', 'B' };
 
         if (blockConfig.isBlockEnabled(blockConfig.getBlockConfigName(BlockConfiguration.BasicFull1))) {
             for (int i = 0; i < resolvers.length; i++) factory.registerBlock(fullDrawers1[i], "fullDrawers1" + tail[i]);
