@@ -6,6 +6,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import com.jaquadro.minecraft.storagedrawers.api.pack.BlockConfiguration;
 import com.jaquadro.minecraft.storagedrawers.api.pack.BlockType;
 import com.jaquadro.minecraft.storagedrawers.api.pack.ExtendedDataResolver;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class DataResolver extends ExtendedDataResolver {
