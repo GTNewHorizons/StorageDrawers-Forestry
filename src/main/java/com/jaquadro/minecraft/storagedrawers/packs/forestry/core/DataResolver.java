@@ -77,20 +77,11 @@ public class DataResolver extends ExtendedDataResolver {
         if (bank == 1) startingOffset = textureBank[0].length;
 
         for (int meta = 0, plankMeta = startingOffset; meta < textureBank[bank].length; meta++, plankMeta++) {
-            // Normal
             setPlankSlab(
                     meta,
                     GameRegistry.findBlock("Forestry", "planks"),
                     plankMeta,
                     GameRegistry.findBlock("Forestry", "slabs"),
-                    plankMeta);
-
-            // Fire-Proof
-            setPlankSlab(
-                    meta,
-                    GameRegistry.findBlock("Forestry", "planksFireproof"),
-                    plankMeta,
-                    GameRegistry.findBlock("Forestry", "slabsFireproof"),
                     plankMeta);
         }
     }
