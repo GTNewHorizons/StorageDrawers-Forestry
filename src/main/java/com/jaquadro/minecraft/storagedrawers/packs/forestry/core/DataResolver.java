@@ -72,35 +72,26 @@ public class DataResolver extends ExtendedDataResolver {
 
     @Override
     public void init() {
-        switch (bank) {
-            case 0:
-                for (int i = 0, p = 0, m = 0; i < 8; i++, p++, m++) setPlankSlab(
-                        i,
-                        GameRegistry.findBlock("Forestry", "planks"),
-                        p,
-                        GameRegistry.findBlock("Forestry", "slabs1"),
-                        m);
-                for (int i = 8, p = 8, m = 0; i < textureBank[0].length; i++, p++, m++) setPlankSlab(
-                        i,
-                        GameRegistry.findBlock("Forestry", "planks"),
-                        p,
-                        GameRegistry.findBlock("Forestry", "slabs2"),
-                        m);
-                break;
-            case 1:
-                for (int i = 0, p = 0, m = 0; i < 8; i++, p++, m++) setPlankSlab(
-                        i,
-                        GameRegistry.findBlock("Forestry", "planks2"),
-                        p,
-                        GameRegistry.findBlock("Forestry", "slabs3"),
-                        m);
-                for (int i = 8, p = 8, m = 0; i < textureBank[1].length; i++, p++, m++) setPlankSlab(
-                        i,
-                        GameRegistry.findBlock("Forestry", "planks2"),
-                        p,
-                        GameRegistry.findBlock("Forestry", "slabs4"),
-                        m);
-                break;
+        int startingOffset = 0;
+
+        if (bank == 1) startingOffset = textureBank[0].length;
+
+        for (int meta = 0, plankMeta = startingOffset; meta < textureBank[bank].length; meta++, plankMeta++) {
+            // Normal
+            setPlankSlab(
+                    meta,
+                    GameRegistry.findBlock("Forestry", "planks"),
+                    plankMeta,
+                    GameRegistry.findBlock("Forestry", "slabs"),
+                    plankMeta);
+
+            // Fire-Proof
+            setPlankSlab(
+                    meta,
+                    GameRegistry.findBlock("Forestry", "planksFireproof"),
+                    plankMeta,
+                    GameRegistry.findBlock("Forestry", "slabsFireproof"),
+                    plankMeta);
         }
     }
 }
